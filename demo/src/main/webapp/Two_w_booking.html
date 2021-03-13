@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Floor</th>
+				<th>Booking_status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="listall" items="${listall}">
+				<tr>
+					<td><c:out value="${listall.id}" /></td>
+					<td><c:out value="${listall.floar}" /></td>
+					<td>
+						<a href="checkin">CheckIn</a>
+						&nbsp;&nbsp;&nbsp; 
+						<a href="checkout">Checkout</a>
+					</td>
+				</tr>
+		</tbody>
+
+	</table>
+</body>
+</html>
