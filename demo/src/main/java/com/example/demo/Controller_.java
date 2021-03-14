@@ -38,7 +38,7 @@ public class Controller_ {
 	private String list_function(Map<String, Object> m) {
 
 		// String str = "/vakanda.jsp";
-		String str = "/After_login.jsp";
+		String str = "/WEB-INF/After_login.jsp";
 		List<Parking_details> listall = service_interface.selectall();
 		m.put("listall", listall);
 
@@ -72,7 +72,7 @@ public class Controller_ {
 		boolean result = service_interface.delete_function(parking_details);
 		if (result == true) {
 			str = list_function(m);
-			str = "/After_login.jsp";
+			str = "/WEB-INF/After_login.jsp";
 		} else {
 			Exception e = null;
 			e.printStackTrace();
@@ -84,14 +84,14 @@ public class Controller_ {
 	public String checkin_function(Map<String, Object> m) {
 		
 		
-		return "/Checkin.jsp";
+		return "/WEB-INF/Booking/Checkin.jsp";
 	}
 	
 	@GetMapping("/checkout")
 	public String checkout_function(Map<String, Object> m) {
 		
 		
-		return "/Checkout.jsp";
+		return "/WEB-INF/Booking/Checkout.jsp";
 	}
 	
 	@PostMapping("/submitcheckin")
@@ -105,6 +105,15 @@ public class Controller_ {
 	public String submitcheckout_function(Map<String, Object> m) {
 		
 		
-		return "/Bill.jsp";
+		return "/WEB-INF/Bill/Bill.jsp";
+	}
+	
+	@GetMapping("/Two_w_book")
+	public String two_w_booking_function(Map<String, Object> m) {
+		
+		List<Two_w> listall1 = service_interface.selectall1();
+		System.out.println("Two_w_booking");
+		m.put("listall1", listall1);
+		return "/Two_w_booking.jsp";
 	}
 }

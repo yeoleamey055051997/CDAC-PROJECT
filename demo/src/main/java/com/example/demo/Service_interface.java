@@ -12,6 +12,8 @@ public interface Service_interface {
 
 	boolean delete_function(Parking_details parking_details);
 
+	List<Two_w> selectall1();
+
 	
 
 }
