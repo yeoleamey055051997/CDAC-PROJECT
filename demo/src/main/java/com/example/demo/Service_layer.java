@@ -11,9 +11,12 @@ public class Service_layer implements Service_interface {
 
 	@Autowired
 	private Dao_interface dao_interface;
-	
+
 	@Autowired
 	private Dao_interface1 dao_interface1;
+	
+	@Autowired
+	private Dao_interface2 dao_interface2;
 
 	@Override
 	public boolean login_function(Owner owner) {
@@ -67,5 +70,11 @@ public class Service_layer implements Service_interface {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	@Override
+	public List<Two_w> selectall1() {
+		List<Two_w> listall1 = dao_interface2.findAll();
+		return listall1;
 	}
 }

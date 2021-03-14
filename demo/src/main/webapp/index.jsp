@@ -180,7 +180,7 @@ body {
 							<h1>Book your spot for two wheeler</h1>
 							<p>You can book the parking according to your need</p>
 							<p>
-								<a class="btn btn-lg btn-primary" href="Two_w_booking.html">Book now</a>
+								<a class="btn btn-lg btn-primary" href="Two_w_book">Book now</a>
 							</p>
 						</div>
 					</div>
