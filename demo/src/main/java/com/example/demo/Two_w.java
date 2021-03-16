@@ -8,16 +8,16 @@ public class Two_w {
 
 	@Id
 	int id;
-	int floor;
+	int floar;
 	boolean booking_status;
 	public Two_w() {
 		
 		// TODO Auto-generated constructor stub
 	}
-	public Two_w(int id, int floor, boolean booking_status) {
+	public Two_w(int id, int floar, boolean booking_status) {
 		super();
 		this.id = id;
-		this.floor = floor;
+		this.floar = floar;
 		this.booking_status = booking_status;
 	}
 	public int getId() {
@@ -26,11 +26,11 @@ public class Two_w {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getFloor() {
-		return floor;
+	public int getFloar() {
+		return floar;
 	}
-	public void setFloor(int floor) {
-		this.floor = floor;
+	public void setFloor(int floar) {
+		this.floar = floar;
 	}
 	public boolean isBooking_status() {
 		return booking_status;
@@ -43,7 +43,7 @@ public class Two_w {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (booking_status ? 1231 : 1237);
-		result = prime * result + floor;
+		result = prime * result + floar;
 		result = prime * result + id;
 		return result;
 	}
@@ -58,7 +58,7 @@ public class Two_w {
 		Two_w other = (Two_w) obj;
 		if (booking_status != other.booking_status)
 			return false;
-		if (floor != other.floor)
+		if (floar != other.floar)
 			return false;
 		if (id != other.id)
 			return false;
@@ -69,8 +69,8 @@ public class Two_w {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Two_w [id=");
 		builder.append(id);
-		builder.append(", floor=");
-		builder.append(floor);
+		builder.append(", floar=");
+		builder.append(floar);
 		builder.append(", booking_status=");
 		builder.append(booking_status);
 		builder.append("]");

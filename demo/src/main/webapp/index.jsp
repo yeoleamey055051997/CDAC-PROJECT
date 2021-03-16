@@ -174,6 +174,7 @@ body {
 						xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
 						preserveAspectRatio="xMidYMid slice" focusable="false">
 						<rect width="100%" height="100%" fill="#777" /></svg>
+						<img src="/images/zhanjiang-chen-GAsXZVqYqFA-unsplash.jpg">
 
 					<div class="container">
 						<div class="carousel-caption text-start">
@@ -190,7 +191,7 @@ body {
 						xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
 						preserveAspectRatio="xMidYMid slice" focusable="false">
 						<rect width="100%" height="100%" fill="#777" /></svg>
-
+						<img src="/images/jung-ho-park-Iif_Jf_QNPk-unsplash.jpg">
 					<div class="container">
 						<div class="carousel-caption">
 							<h1>Book your spot for Four wheeler</h1>
@@ -206,7 +207,7 @@ body {
 						xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
 						preserveAspectRatio="xMidYMid slice" focusable="false">
 						<rect width="100%" height="100%" fill="#777" /></svg>
-
+					<img src="/images/wengang-zhai-adA47gBo6us-unsplash.jpg">
 					<div class="container">
 						<div class="carousel-caption text-end">
 							<h1>Our Specialties</h1>

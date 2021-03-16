@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +18,11 @@ public class Service_layer implements Service_interface {
 	
 	@Autowired
 	private Dao_interface2 dao_interface2;
+	
+	@Autowired
+	private Dao_interface3 dao_interface3;
+	
+	
 
 	@Override
 	public boolean login_function(Owner owner) {
@@ -77,4 +83,18 @@ public class Service_layer implements Service_interface {
 		List<Two_w> listall1 = dao_interface2.findAll();
 		return listall1;
 	}
+
+	@Override
+	public void booking_conferm(Conferm_two_wheeler conferm_two_wheeler) {
+		// TODO Auto-generated method stub
+		dao_interface3.save(conferm_two_wheeler);
+	}
+
+	@Override
+	public void change_status(Two_w two_w) {
+		// TODO Auto-generated method stub
+		dao_interface2.save(two_w);
+	}
+	
+	
 }

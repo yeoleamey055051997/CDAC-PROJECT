@@ -99,5 +99,13 @@ public class Parking_details {
 		
 		this.id = id;
 	}
+
+	public Parking_details(int id, int floar) {
+		super();
+		this.id = id;
+		this.floar = floar;
+	}
+
+	
 	
 }

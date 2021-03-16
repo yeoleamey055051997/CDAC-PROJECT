@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
 
@@ -79,38 +81,53 @@ public class Controller_ {
 		}
 		return str;
 	}
-	
+
 	@GetMapping("/checkin")
-	public String checkin_function(Map<String, Object> m) {
-		
-		
+	public String checkin_function(@RequestParam("id") String id1, @RequestParam("floar") String floar1,
+			Map<String, Object> m) {
+
+		Parking_details parking_details = new Parking_details(0, 0);
+		parking_details = new Parking_details(Integer.parseInt(id1), Integer.parseInt(floar1));
+		m.put("parking_details", parking_details);
 		return "/WEB-INF/Booking/Checkin.jsp";
 	}
-	
+
 	@GetMapping("/checkout")
-	public String checkout_function(Map<String, Object> m) {
-		
-		
+	public String checkout_function(@RequestParam("id") String id1, @RequestParam("floar") String floar1,
+			Map<String, Object> m) {
+		Parking_details parking_details = new Parking_details(0, 0);
+		parking_details = new Parking_details(Integer.parseInt(id1), Integer.parseInt(floar1));
+		m.put("parking_details", parking_details);
 		return "/WEB-INF/Booking/Checkout.jsp";
 	}
-	
+
 	@PostMapping("/submitcheckin")
-	public String submitcheckin_function(Map<String, Object> m) {
-		
-		
+	public String submitcheckin_function(@RequestParam("id") String id1, @RequestParam("floar") String floar1,
+			@RequestParam("name") String name, @RequestParam("email") String email, Map<String, Object> m) {
+		// Parking_details parking_details = new Parking_details(0, 0);
+		// parking_details = new Parking_details(Integer.parseInt(id1),
+		// Integer.parseInt(floar1));
+		LocalDate date = java.time.LocalDate.now();
+		String date1 = date.toString();
+		LocalTime time = java.time.LocalTime.now();
+		String time1 = time.toString();
+		Conferm_two_wheeler conferm_two_wheeler = new Conferm_two_wheeler(Integer.parseInt(id1),
+				Integer.parseInt(floar1), name, email, date1, time1);
+		service_interface.booking_conferm(conferm_two_wheeler);
+		Two_w two_w = new Two_w(Integer.parseInt(id1), Integer.parseInt(floar1), false);
+		service_interface.change_status(two_w);
 		return "/index.jsp";
 	}
-	
+
 	@PostMapping("/submitcheckout")
 	public String submitcheckout_function(Map<String, Object> m) {
-		
-		
+
 		return "/WEB-INF/Bill/Bill.jsp";
 	}
-	
+
 	@GetMapping("/Two_w_book")
 	public String two_w_booking_function(Map<String, Object> m) {
-		
+
 		List<Two_w> listall1 = service_interface.selectall1();
 		System.out.println("Two_w_booking");
 		m.put("listall1", listall1);

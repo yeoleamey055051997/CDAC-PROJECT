@@ -14,6 +14,10 @@ public interface Service_interface {
 
 	List<Two_w> selectall1();
 
+	void booking_conferm(Conferm_two_wheeler conferm_two_wheeler);
+
+	void change_status(Two_w two_w);
+
 	
 
 }
