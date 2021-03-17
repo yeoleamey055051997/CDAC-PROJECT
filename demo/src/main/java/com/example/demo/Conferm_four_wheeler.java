@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Conferm_two_wheeler {
+public class Conferm_four_wheeler {
 
 	@Id
 	int id;
@@ -12,29 +12,17 @@ public class Conferm_two_wheeler {
 	String name;
 	String email;
 	String date1;
-	
-	
-	public Conferm_two_wheeler() {
+	public Conferm_four_wheeler() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Conferm_two_wheeler(int id, int floar, String name, String email, String date1) {
+	public Conferm_four_wheeler(int id, int floar, String name, String email, String date1) {
 		super();
 		this.id = id;
 		this.floar = floar;
 		this.name = name;
 		this.email = email;
 		this.date1 = date1;
-		
-	}
-	
-	public Conferm_two_wheeler(int id, int floar, String name, String email) {
-		super();
-		this.id = id;
-		this.floar = floar;
-		this.name = name;
-		this.email = email;
 	}
 	
 	public int getId() {
@@ -67,23 +55,6 @@ public class Conferm_two_wheeler {
 	public void setDate1(String date1) {
 		this.date1 = date1;
 	}
-		
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Conferm_two_wheeler [id=");
-		builder.append(id);
-		builder.append(", floar=");
-		builder.append(floar);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", email=");
-		builder.append(email);
-		builder.append(", date1=");
-		builder.append(date1);
-		builder.append("]");
-		return builder.toString();
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -103,7 +74,7 @@ public class Conferm_two_wheeler {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Conferm_two_wheeler other = (Conferm_two_wheeler) obj;
+		Conferm_four_wheeler other = (Conferm_four_wheeler) obj;
 		if (date1 == null) {
 			if (other.date1 != null)
 				return false;
@@ -125,7 +96,29 @@ public class Conferm_two_wheeler {
 			return false;
 		return true;
 	}
-	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Conferm_four_wheeler [id=");
+		builder.append(id);
+		builder.append(", floar=");
+		builder.append(floar);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", date1=");
+		builder.append(date1);
+		builder.append("]");
+		return builder.toString();
+	}
+	public Conferm_four_wheeler(int id, int floar, String name, String email) {
+		super();
+		this.id = id;
+		this.floar = floar;
+		this.name = name;
+		this.email = email;
+	}
 	
 	
 }

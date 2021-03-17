@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+<title>Add Slots</title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet"
@@ -88,7 +88,7 @@ table.table tr th, table.table tr td {
 }
 
 table.table tr th:first-child {
-	width: 60px;
+	width: 100px;
 }
 
 table.table tr th:last-child {
@@ -189,132 +189,9 @@ table.table .avatar {
 	margin-top: 10px;
 	font-size: 13px;
 }
-/* Custom checkbox */
-.custom-checkbox {
-	position: relative;
-}
-
-.custom-checkbox input[type="checkbox"] {
-	opacity: 0;
-	position: absolute;
-	margin: 5px 0 0 3px;
-	z-index: 9;
-}
-
-.custom-checkbox label:before {
-	width: 18px;
-	height: 18px;
-}
-
-.custom-checkbox label:before {
-	content: '';
-	margin-right: 10px;
-	display: inline-block;
-	vertical-align: text-top;
-	background: white;
-	border: 1px solid #bbb;
-	border-radius: 2px;
-	box-sizing: border-box;
-	z-index: 2;
-}
-
-.custom-checkbox input[type="checkbox"]:checked+label:after {
-	content: '';
-	position: absolute;
-	left: 6px;
-	top: 3px;
-	width: 6px;
-	height: 11px;
-	border: solid #000;
-	border-width: 0 3px 3px 0;
-	transform: inherit;
-	z-index: 3;
-	transform: rotateZ(45deg);
-}
-
-.custom-checkbox input[type="checkbox"]:checked+label:before {
-	border-color: #03A9F4;
-	background: #03A9F4;
-}
-
-.custom-checkbox input[type="checkbox"]:checked+label:after {
-	border-color: #fff;
-}
-
-.custom-checkbox input[type="checkbox"]:disabled+label:before {
-	color: #b8b8b8;
-	cursor: auto;
-	box-shadow: none;
-	background: #ddd;
-}
-/* Modal styles */
-.modal .modal-dialog {
-	max-width: 400px;
-}
-
-.modal .modal-header, .modal .modal-body, .modal .modal-footer {
-	padding: 20px 30px;
-}
-
-.modal .modal-content {
-	border-radius: 3px;
-	font-size: 14px;
-}
-
-.modal .modal-footer {
-	background: #ecf0f1;
-	border-radius: 0 0 3px 3px;
-}
-
-.modal .modal-title {
-	display: inline-block;
-}
-
-.modal .form-control {
-	border-radius: 2px;
-	box-shadow: none;
-	border-color: #dddddd;
-}
-
-.modal textarea.form-control {
-	resize: vertical;
-}
-
-.modal .btn {
-	border-radius: 2px;
-	min-width: 100px;
-}
-
-.modal form label {
-	font-weight: normal;
-}
 </style>
-<script>
-	$(document).ready(function() {
-		// Activate tooltip
-		$('[data-toggle="tooltip"]').tooltip();
-
-		// Select/Deselect checkboxes
-		var checkbox = $('table tbody input[type="checkbox"]');
-		$("#selectAll").click(function() {
-			if (this.checked) {
-				checkbox.each(function() {
-					this.checked = true;
-				});
-			} else {
-				checkbox.each(function() {
-					this.checked = false;
-				});
-			}
-		});
-		checkbox.click(function() {
-			if (!this.checked) {
-				$("#selectAll").prop("checked", false);
-			}
-		});
-	});
-</script>
 </head>
+
 <body>
 	<!-- HEADER START -->
 	<header>
@@ -330,7 +207,7 @@ table.table .avatar {
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="./index.jsp">Home</a></li>
+							aria-current="page" href="index.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="login.jsp">Logout</a></li>
 
 					</ul>
@@ -361,9 +238,6 @@ table.table .avatar {
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
-							<th><span class="custom-checkbox"> <input
-									type="checkbox" id="selectAll"> <label for="selectAll"></label>
-							</span></th>
 							<th>ID</th>
 							<th>Floar</th>
 							<th>Vehicle type</th>
@@ -374,10 +248,6 @@ table.table .avatar {
 					<tbody>
 						<c:forEach var="listall" items="${listall}">
 							<tr>
-								<td><span class="custom-checkbox"> <input
-										type="checkbox" id="checkbox1" name="options[]" value="1">
-										<label for="checkbox1"></label>
-								</span></td>
 								<td><c:out value="${listall.id}" /></td>
 								<td><c:out value="${listall.floar}" /></td>
 								<td><c:out value="${listall.vehicle_type}" /></td>
@@ -386,23 +256,15 @@ table.table .avatar {
 								<td><a href="#editEmployeeModal" class="edit"
 									data-toggle="modal"> <i class="material-icons"
 										data-toggle="tooltip" title="Edit">&#xE254;</i>
-								</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-									href="delete?id=<c:out value='${listall.id}' />">Delete</a></td>
+								</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+								<a href="delete?id=<c:out value='${listall.id}'/>"> 
+									<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+								</a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-				<div class="clearfix">
-					<ul class="pagination">
-						<li class="page-item disabled"><a href="#">Previous</a></li>
-						<li class="page-item active"><a href="#" class="page-link">1</a></li>
-						<li class="page-item"><a href="#" class="page-link">2</a></li>
-						<li class="page-item"><a href="#" class="page-link">3</a></li>
-						<li class="page-item"><a href="#" class="page-link">4</a></li>
-						<li class="page-item"><a href="#" class="page-link">5</a></li>
-						<li class="page-item"><a href="#" class="page-link">Next</a></li>
-					</ul>
-				</div>
 			</div>
 		</div>
 	</div>

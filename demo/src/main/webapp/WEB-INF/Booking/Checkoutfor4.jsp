@@ -67,9 +67,8 @@ body {
 			</div>
 		</nav>
 	</header>
-
 	<div class="registration-form">
-		<form action="submitcheckin" method="post">
+		<form action="submitcheckoutfor4" method="post">
 			<div class="form-group">
 				<label for="fname">Name :</label><br> <input type="text"
 					class="form-control item" id="name" name="name" placeholder="Name"
