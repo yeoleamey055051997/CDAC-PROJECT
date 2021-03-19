@@ -3,8 +3,6 @@ package com.example.demo;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -143,12 +141,13 @@ public class Service_layer implements Service_interface {
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
 			Date dateObj1 = sdf.parse(date1);
 			Date dateObj2 = sdf.parse(date2);
-			DecimalFormat crunchifyFormatter = new DecimalFormat("###,###");
+			//DecimalFormat crunchifyFormatter = new DecimalFormat("###,###");
 			long diff = dateObj2.getTime() - dateObj1.getTime();
 			int diffmin = (int) (diff / (60 * 1000));
 			// System.out.println("difference between minutues: " +
 			// crunchifyFormatter.format(diffmin));
-			int bil = (int) (Integer.parseInt(crunchifyFormatter.format(diffmin)) * 0.03);
+			//int bil = (int) (Integer.parseInt(crunchifyFormatter.format(diffmin)) * 0.03);
+			int bil =  (int) (diffmin * 0.03);
 			String bill = String.valueOf(bil);
 
 			hm.put("date1", date1);
@@ -214,12 +213,13 @@ public class Service_layer implements Service_interface {
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
 			Date dateObj1 = sdf.parse(date1);
 			Date dateObj2 = sdf.parse(date2);
-			DecimalFormat crunchifyFormatter = new DecimalFormat("###,###");
+			//DecimalFormat crunchifyFormatter = new DecimalFormat("###,###");
 			long diff = dateObj2.getTime() - dateObj1.getTime();
 			int diffmin = (int) (diff / (60 * 1000));
 			// System.out.println("difference between minutues: " +
 			// crunchifyFormatter.format(diffmin));
-			int bil = (int) (Integer.parseInt(crunchifyFormatter.format(diffmin)) * 0.03);
+			//int bil = (int) (Integer.parseInt(crunchifyFormatter.format(diffmin)) * 0.03);
+			int bil = (int) (diffmin * 0.03);
 			String bill = String.valueOf(bil);
 
 			hm.put("date1", date1);

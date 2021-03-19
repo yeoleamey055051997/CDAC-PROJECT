@@ -55,7 +55,6 @@ public class Controller_ {
 		Parking_details parking_details = new Parking_details(Integer.parseInt(id), Integer.parseInt(floar),
 				vehicle_type, Integer.parseInt(capacity));
 		boolean result = service_interface.insert_function(parking_details);
-		System.out.println(result);
 		if (result == true) {
 			str = list_function(m);
 		} else {
