@@ -225,7 +225,7 @@ table.table .avatar {
 					<div class="row">
 						<div class="col-sm-6">
 							<h2>
-								Book <b>Four Wheeler Parking</b>
+								Book <b>Two Wheeler Parking</b>
 							</h2>
 						</div>
 					</div>
