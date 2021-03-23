@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Check in for four wheeler</title>
+<title>Sign-up</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <style>
@@ -67,32 +69,44 @@ body {
 			</div>
 		</nav>
 	</header>
+
 	<div class="registration-form">
-		<form action="submitcheckoutfor4" method="post">
+		<form action="action_page" method="post">
 			<div class="form-group">
+				<h1>Sign Up</h1>
+				<p>Please fill in this form to create an account.</p>
 				<label for="fname">Name :</label><br> <input type="text"
 					class="form-control item" id="name" name="name" placeholder="Name"
 					value="<c:out value="${park.name}"/>">
 			</div>
 			<div class="form-group">
-				<label for="lname">Email :</label> <input type="password"
+				<label for="lname">Email :</label> <input type="email"
 					class="form-control item" id="email" name="email"
 					placeholder="Email" value="<c:out value="${park.email}"/>">
 			</div>
 			<div class="form-group">
-				<label for="lname">ID :</label> <input type="hidden"
-					class="form-control item" id="id" name="id" value='${four_w.id}'><span>${four_w.id}</span>
+				<label for="lname">Password :</label> <input type="password"
+					class="form-control item" id="password" name="password"
+					value='${park.password}' placeholder="Password">
 			</div>
+
 			<div class="form-group">
-				<label for="lname">Floor :</label> <input type="hidden"
-					class="form-control item" id="floar" name="floar"
-					value='${four_w.floar}'><span>${four_w.floar}</span>
+				<label for="lname">Repeat Password :</label> <input type="password"
+					class="form-control item" id="rep-password" name="rep-password"
+					placeholder=" Repeat Password">
 			</div>
+			<p>
+				By creating an account you agree to our <a href="#"
+					style="color: dodgerblue">Terms and Privacy</a>.
+			</p>
+
 			<div class="form-group">
+
 				<button type="submit" name="por" value="Submit"
-					class="btn btn-block create-account">Submit</button>
+					class="btn btn-block create-account">Sign Up</button>
 			</div>
 		</form>
 	</div>
+
 </body>
 </html>

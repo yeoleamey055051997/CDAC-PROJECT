@@ -1,15 +1,10 @@
 package com.example.demo;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
-
-import javax.naming.spi.DirStateFactory.Result;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +13,6 @@ public class Service_layer implements Service_interface {
 
 	@Autowired
 	private Dao_interface dao_interface;
-
-	@Autowired
-	private Dao_interface1 dao_interface1;
 
 	@Autowired
 	private Dao_interface2 dao_interface2;
@@ -34,60 +26,7 @@ public class Service_layer implements Service_interface {
 	@Autowired
 	private Dao_interface5 dao_interface5;
 
-	@Override
-	public boolean login_function(Owner owner) {
-		boolean result = false;
-		try {
-			String username = owner.getUsername();
-			String passward = owner.getPassword();
-			Optional<Owner> owner1 = dao_interface.findById(username);
-			if (owner1.isPresent()) {
-				owner = owner1.get();
-				if (owner.getPassword().equals(passward)) {
-					result = true;
-				}
-			}
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	@Override
-	public boolean insert_function(Parking_details parking_details) {
-		boolean result = false;
-		try {
-			dao_interface1.save(parking_details);
-			result = true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	@Override
-	public List<Parking_details> selectall() {
-		List<Parking_details> listofall = dao_interface1.findAll();
-		return listofall;
-	}
-
-	@Override
-	public boolean delete_function(Parking_details parking_details) {
-
-		boolean result = false;
-		try {
-			dao_interface1.deleteById(parking_details.getId());
-			result = true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return result;
-	}
-
+//////////////////////////////////////////////////////////////////////////Two wheeler functions
 	@Override
 	public List<Two_w> selectall1() {
 		List<Two_w> listall1 = dao_interface2.findAll();
@@ -95,15 +34,34 @@ public class Service_layer implements Service_interface {
 	}
 
 	@Override
-	public void booking_conferm(Conferm_two_wheeler conferm_two_wheeler) {
-		// TODO Auto-generated method stub
-		dao_interface3.save(conferm_two_wheeler);
+	public boolean insert_function_2(Two_w two_w) {
+		boolean result = false;
+		try {
+			dao_interface2.save(two_w);
+			result = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	@Override
-	public void change_status(Two_w two_w) {
+	public boolean delete_function_2(Two_w two_w) {
+		boolean result = false;
+		try {
+			dao_interface2.deleteById(two_w.getId());
+			result = true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public void booking_conferm(Conferm_two_wheeler conferm_two_wheeler) {
 		// TODO Auto-generated method stub
-		dao_interface2.save(two_w);
+		dao_interface3.save(conferm_two_wheeler);
 	}
 
 	@Override
@@ -121,6 +79,7 @@ public class Service_layer implements Service_interface {
 		if (name.equalsIgnoreCase(conferm_two_wheeler.getName())
 				&& email.equalsIgnoreCase(conferm_two_wheeler.getEmail())) {
 			result = true;
+
 		}
 
 		return result;
@@ -141,13 +100,9 @@ public class Service_layer implements Service_interface {
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
 			Date dateObj1 = sdf.parse(date1);
 			Date dateObj2 = sdf.parse(date2);
-			//DecimalFormat crunchifyFormatter = new DecimalFormat("###,###");
 			long diff = dateObj2.getTime() - dateObj1.getTime();
 			int diffmin = (int) (diff / (60 * 1000));
-			// System.out.println("difference between minutues: " +
-			// crunchifyFormatter.format(diffmin));
-			//int bil = (int) (Integer.parseInt(crunchifyFormatter.format(diffmin)) * 0.03);
-			int bil =  (int) (diffmin * 0.03);
+			float bil = (float) (diffmin * 0.3);
 			String bill = String.valueOf(bil);
 
 			hm.put("date1", date1);
@@ -162,20 +117,48 @@ public class Service_layer implements Service_interface {
 	}
 
 	@Override
+	public void change_status(Two_w two_w) {
+		// TODO Auto-generated method stub
+		dao_interface2.save(two_w);
+	}
+
+///////////////////////////////////////////////////////////////////////////Four wheeler functions	
+
+	@Override
 	public List<Four_w> selectall2() {
 		List<Four_w> listall2 = dao_interface4.findAll();
 		return listall2;
 	}
 
 	@Override
-	public void booking_confermfor4(Conferm_four_wheeler conferm_four_wheeler) {
-		dao_interface5.save(conferm_four_wheeler);
-
+	public boolean insert_function_4(Four_w four_w) {
+		boolean result = false;
+		try {
+			dao_interface4.save(four_w);
+			result = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		return result;
 	}
 
 	@Override
-	public void change_statusfor4(Four_w four_w) {
-		dao_interface4.save(four_w);
+	public boolean delete_function_4(Four_w four_w) {
+		boolean result = false;
+		try {
+			dao_interface4.deleteById(four_w.getId());
+			result = true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public void booking_confermfor4(Conferm_four_wheeler conferm_four_wheeler) {
+		dao_interface5.save(conferm_four_wheeler);
 
 	}
 
@@ -213,13 +196,9 @@ public class Service_layer implements Service_interface {
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
 			Date dateObj1 = sdf.parse(date1);
 			Date dateObj2 = sdf.parse(date2);
-			//DecimalFormat crunchifyFormatter = new DecimalFormat("###,###");
 			long diff = dateObj2.getTime() - dateObj1.getTime();
 			int diffmin = (int) (diff / (60 * 1000));
-			// System.out.println("difference between minutues: " +
-			// crunchifyFormatter.format(diffmin));
-			//int bil = (int) (Integer.parseInt(crunchifyFormatter.format(diffmin)) * 0.03);
-			int bil = (int) (diffmin * 0.03);
+			float bil = (float) (diffmin * 0.3);
 			String bill = String.valueOf(bil);
 
 			hm.put("date1", date1);
@@ -233,4 +212,23 @@ public class Service_layer implements Service_interface {
 		return hm;
 	}
 
+	@Override
+	public void change_statusfor4(Four_w four_w) {
+		dao_interface4.save(four_w);
+
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@Override
+	public boolean savesignup(Owner owner) {
+		boolean result = false;
+		try {
+			dao_interface.save(owner);
+			result = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

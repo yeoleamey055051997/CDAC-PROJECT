@@ -5,11 +5,9 @@
 <head>
 <title>Login Page</title>
 
-<!--Bootsrap 4 CDN-->
+<!--Bootstrap 4 CDN-->
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Numans');
@@ -86,13 +84,13 @@ input:focus {
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index.jsp">Home</a></li>
+							aria-current="page" href="/index">Home</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
-	
+
 	<div class="container">
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
@@ -100,13 +98,14 @@ input:focus {
 					<h3>Sign In</h3>
 				</div>
 				<div class="card-body">
-					<form action="login" method="get">
+
+					<form action="login" method="post">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="username"
-								value="<c:out value="${existingdetails.username}" />"
+							
+							<input type='text' name='username' value=''
 								class="form-control" placeholder="username">
 
 						</div>
@@ -114,25 +113,21 @@ input:focus {
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password"
-								value="<c:out value="${existingdetails.password}" />"
-								class="form-control" placeholder="password">
+							
+							<input type='password' name='password' class="form-control"
+								placeholder="password" />
 						</div>
 						<div class="form-group">
-							<input type="submit" name="por" value="Login"
-								class="btn float-right login_btn">
+							<!-- 			<input type="submit" name="por" value="Login" class="btn float-right login_btn"> -->
+							<input name="submit" type="submit" value="submit"
+								class="btn float-right login_btn" />
 						</div>
 					</form>
 
 				</div>
 				<div class="card-footer">
-					<div class="row align-items-center remember">
-						<p style="color:white;">
-							<c:out value="${key1}" />
-						</p>
-					</div>
 					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="#">Sign Up</a>
+						Don't have an account?<a href="/Signup">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center">
 						<a href="#">Forgot your password?</a>
@@ -141,7 +136,6 @@ input:focus {
 			</div>
 		</div>
 	</div>
-	<c:out value="${key1}" />
 	<hr />
 </body>
 </html>

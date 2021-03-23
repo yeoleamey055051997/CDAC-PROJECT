@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Check in for two wheeler</title>
+<title>Check in for four wheeler</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <style>
@@ -61,7 +61,7 @@ body {
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index.jsp">Home</a></li>
+							aria-current="page" href="index">Home</a></li>
 					</ul>
 				</div>
 			</div>
@@ -80,14 +80,13 @@ body {
 					placeholder="Email" value="<c:out value="${park.email}"/>">
 			</div>
 			<div class="form-group">
-				<label for="lname">ID :</label> <input type="text"
-					class="form-control item" id="id" name="id"
-					value='${parking_details.id}'>
+				<label for="lname">ID :</label> <input type="hidden"
+					class="form-control item" id="id" name="id" value='${four_w.id}'><span>${four_w.id}</span>
 			</div>
 			<div class="form-group">
-				<label for="lname">Floor :</label> <input type="text"
+				<label for="lname">Floor :</label> <input type="hidden"
 					class="form-control item" id="floar" name="floar"
-					value='${parking_details.floar}'>
+					value='${four_w.floar}'><span>${four_w.floar}</span>
 			</div>
 			<div class="form-group">
 				<button type="submit" name="por" value="Submit"
