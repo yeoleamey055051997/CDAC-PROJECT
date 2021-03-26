@@ -102,8 +102,8 @@ body {
 
 			<div class="form-group">
 
-				<button type="submit" name="por" value="Submit"
-					class="btn btn-block create-account">Sign Up</button>
+				<input type="reset" value="Reset" class="btn btn-block create-account"/>
+				<button type="submit" name="por" value="Submit" class="btn btn-block create-account">Sign Up</button>
 			</div>
 		</form>
 	</div>

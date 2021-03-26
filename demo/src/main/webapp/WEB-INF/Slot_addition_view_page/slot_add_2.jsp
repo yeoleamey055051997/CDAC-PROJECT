@@ -290,6 +290,7 @@ table.table .avatar {
 						</div>
 					</div>
 					<div class="modal-footer">
+						<input type="reset" value="Reset" >
 						<input type="button" class="btn btn-default" data-dismiss="modal"
 							value="Cancel"> <input type="submit"
 							class="btn btn-success" name="por" value="insert">
@@ -323,6 +324,7 @@ table.table .avatar {
 						</div>
 					</div>
 					<div class="modal-footer">
+						<input type="reset" value="Reset" >
 						<input type="button" class="btn btn-default" data-dismiss="modal"
 							value="Cancel"> <input type="submit" class="btn btn-info"
 							name="por" value="update">
