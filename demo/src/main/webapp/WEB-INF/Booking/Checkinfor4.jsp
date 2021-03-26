@@ -89,6 +89,7 @@ body {
 					value='${four_w.floar}'><span>${four_w.floar}</span>
 			</div>
 			<div class="form-group">
+				<input type="reset" value="Reset" class="btn btn-block create-account"/>
 				<button type="submit" name="por" value="Submit"
 					class="btn btn-block create-account">Submit</button>
 			</div>

@@ -262,7 +262,7 @@ public class Controller_ {
 		Conferm_four_wheeler conferm_four_wheeler = new Conferm_four_wheeler(Integer.parseInt(id1),
 				Integer.parseInt(floar1), name, email);
 		boolean result = false;
-		String str = "/WEB-INF/Error.jsp";
+		String str = "/WEB-INF/Messages/Error.jsp";
 		result = service_interface.checkoutfor4_function(conferm_four_wheeler);
 		if (result == true) {
 			HashMap<String, String> hm = new HashMap<String, String>();
