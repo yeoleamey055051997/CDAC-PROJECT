@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Book parking slot for two wheeler</title>
+<title>Book parking slot for Four wheeler</title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet"
@@ -208,7 +208,7 @@ table.table .avatar {
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index.jsp">Home</a></li>
+							aria-current="page" href="/index">Home</a></li>
 					</ul>
 				</div>
 			</div>
@@ -233,7 +233,8 @@ table.table .avatar {
 						<tr>
 							<th>ID</th>
 							<th>Floar</th>
-							<th>Booking_status</th>
+							<th>Booking status</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -241,15 +242,29 @@ table.table .avatar {
 							<tr>
 								<td><c:out value="${listall2.id}" /></td>
 								<td><c:out value="${listall2.floar}" /></td>
-								<td><a href="checkinfor4?id=<c:out value='${listall2.id}' />&floar=<c:out value='${listall2.floar}' />">CheckIn</a> &nbsp;&nbsp;&nbsp;&nbsp; 
-									<a href="checkoutfor4?id=<c:out value='${listall2.id}' />&floar=<c:out value='${listall2.floar}' />">Checkout</a>
-								</td>
+								<c:set var="its1" value="true" />
+								<c:set var="its2" value="true" />
+								<c:if test="${listall2.booking_status eq false }">
+									<c:set var="ist" value="Unavailable" />
+									<c:set var="its1" value="false" />
+								</c:if>
+								<c:if test="${listall2.booking_status eq true}">
+									<c:set var="ist" value="Available" />
+									<c:set var="its2" value="false" />
+								</c:if>
+								<td>${ist}</td>
+								<td><a
+									href="checkinfor4?id=<c:out value='${listall2.id}' />&floar=<c:out value='${listall2.floar}' />"
+									onclick="return ${its1}">CheckIn</a> &nbsp;&nbsp;&nbsp;&nbsp;
+									<a
+									href="checkoutfor4?id=<c:out value='${listall2.id}' />&floar=<c:out value='${listall2.floar}' />"
+									onclick="return ${its2}">Checkout</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
 		</div>
-	</div>	
+	</div>
 </body>
 </html>

@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<%@page import="java.net.ResponseCache"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Book parking slot for two wheeler</title>
+<title>Add Slots for four wheeler</title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet"
@@ -192,8 +191,11 @@ table.table .avatar {
 	font-size: 13px;
 }
 </style>
+
 </head>
+
 <body>
+
 
 	<!-- HEADER START -->
 	<header>
@@ -209,7 +211,8 @@ table.table .avatar {
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index">Home</a></li>
+							aria-current="page" href="/index">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
 					</ul>
 				</div>
 			</div>
@@ -225,8 +228,13 @@ table.table .avatar {
 					<div class="row">
 						<div class="col-sm-6">
 							<h2>
-								Book <b>Two Wheeler Parking</b>
+								Manage <b>Parking</b>
 							</h2>
+						</div>
+						<div class="col-sm-6">
+							<a href="#addEmployeeModal" class="btn btn-success"
+								data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add
+									New Parking lot</span> </a>
 						</div>
 					</div>
 				</div>
@@ -235,36 +243,91 @@ table.table .avatar {
 						<tr>
 							<th>ID</th>
 							<th>Floar</th>
-							<th>Booking status</th>
-							<th>Action</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="listall1" items="${listall1}">
+						<c:forEach var="listall" items="${listall}">
 							<tr>
-								<td><c:out value="${listall1.id}" /></td>
-								<td><c:out value="${listall1.floar}" /></td>
-								<c:set var="its1" value="true" />
-								<c:set var="its2" value="true" />
-								<c:if test="${listall1.booking_status eq false }">
-									<c:set var="ist" value="Unavailable" />
-									<c:set var="its1" value="false" />
-								</c:if>
-								<c:if test="${listall1.booking_status eq true}">
-									<c:set var="ist" value="Available" />
-									<c:set var="its2" value="false" />
-								</c:if>
-								<td>${ist}</td>
-								<td><a
-									href="checkin?id=<c:out value='${listall1.id}' />&floar=<c:out value='${listall1.floar}' />"
-									onclick="return ${its1}">CheckIn</a> &nbsp;&nbsp;&nbsp;&nbsp;
-									<a
-									href="checkout?id=<c:out value='${listall1.id}' />&floar=<c:out value='${listall1.floar}' />"
-									onclick="return ${its2}">Checkout</a></td>
+								<td><c:out value="${listall.id}" /></td>
+								<td><c:out value="${listall.floar}" /></td>
+								<td><a href="#editEmployeeModal" class="edit"
+									data-toggle="modal"> <i class="material-icons"
+										data-toggle="tooltip" title="Edit">&#xE254;</i>
+								</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+									href="delete_4?id=<c:out value='${listall.id}'/>"> <i
+										class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+								</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Add Modal HTML -->
+	<div id="addEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="insert_4" method="post">
+					<div class="modal-header">
+						<h4 class="modal-title">Add Parking Lot</h4>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>ID</label> <input type="number" name="id"
+								value="<c:out value="${exis.id}"/>" class="form-control"
+								placeholder="ID">
+						</div>
+						<div class="form-group">
+							<label>Floar</label> <input type="number" name="floar"
+								value="<c:out value="${exis.floar}"/>" class="form-control"
+								placeholder="floar">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal"
+							value="Cancel"> <input type="submit"
+							class="btn btn-success" name="por" value="insert">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Edit Modal HTML -->
+	<div id="editEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="insert_4" method="post">
+					<div class="modal-header">
+						<h4 class="modal-title">Edit Parking Lot</h4>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>ID</label> <input type="number" name="id"
+								value="<c:out value="${exis.id}"/>" class="form-control"
+								placeholder="ID">
+						</div>
+						<div class="form-group">
+							<label>Floar</label> <input type="number" name="floar"
+								value="<c:out value="${exis.floar}"/>" class="form-control"
+								placeholder="floar">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal"
+							value="Cancel"> <input type="submit" class="btn btn-info"
+							name="por" value="update">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

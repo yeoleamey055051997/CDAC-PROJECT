@@ -2,6 +2,7 @@ package com.example.demo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
 @Entity
 public class Four_w {
 
@@ -9,34 +10,43 @@ public class Four_w {
 	int id;
 	int floar;
 	boolean booking_status;
+
 	public Four_w() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Four_w(int id, int floar, boolean booking_status) {
 		super();
 		this.id = id;
 		this.floar = floar;
 		this.booking_status = booking_status;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public int getFloar() {
 		return floar;
 	}
+
 	public void setFloar(int floar) {
 		this.floar = floar;
 	}
+
 	public boolean isBooking_status() {
 		return booking_status;
 	}
+
 	public void setBooking_status(boolean booking_status) {
 		this.booking_status = booking_status;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -46,6 +56,7 @@ public class Four_w {
 		result = prime * result + id;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -63,6 +74,7 @@ public class Four_w {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -75,6 +87,16 @@ public class Four_w {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
+
+	public Four_w(int id) {
+		super();
+		this.id = id;
+	}
+
+	public Four_w(int id, int floar) {
+		super();
+		this.id = id;
+		this.floar = floar;
+	}
+
 }

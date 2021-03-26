@@ -38,6 +38,7 @@ CREATE TABLE `conferm_four_wheeler` (
 
 LOCK TABLES `conferm_four_wheeler` WRITE;
 /*!40000 ALTER TABLE `conferm_four_wheeler` DISABLE KEYS */;
+INSERT INTO `conferm_four_wheeler` VALUES (1,8,'dd','dd@gmail.com','23/03/2021 15:36:30');
 /*!40000 ALTER TABLE `conferm_four_wheeler` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +65,7 @@ CREATE TABLE `conferm_two_wheeler` (
 
 LOCK TABLES `conferm_two_wheeler` WRITE;
 /*!40000 ALTER TABLE `conferm_two_wheeler` DISABLE KEYS */;
-INSERT INTO `conferm_two_wheeler` VALUES (1,2,'ameyyeole','ameyuauhjhcc','18/03/2021 17:13:44'),(2,2,'amey','ameyyeole ','17/03/2021 20:08:59');
+INSERT INTO `conferm_two_wheeler` VALUES (1,2,'ok','ok@gmail.com','22/03/2021 20:52:41'),(2,2,'ok','ok','20/03/2021 16:04:44'),(3,0,'x4r','4d','23/03/2021 17:19:06'),(5,1,'ay','ay@gmail.com','23/03/2021 15:13:20'),(6,0,'w','w','23/03/2021 16:09:54');
 /*!40000 ALTER TABLE `conferm_two_wheeler` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +90,7 @@ CREATE TABLE `four_w` (
 
 LOCK TABLES `four_w` WRITE;
 /*!40000 ALTER TABLE `four_w` DISABLE KEYS */;
-INSERT INTO `four_w` VALUES (3,1,_binary '');
+INSERT INTO `four_w` VALUES (1,0,_binary ''),(2,3,_binary '');
 /*!40000 ALTER TABLE `four_w` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,9 +102,12 @@ DROP TABLE IF EXISTS `owner`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `owner` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,34 +116,8 @@ CREATE TABLE `owner` (
 
 LOCK TABLES `owner` WRITE;
 /*!40000 ALTER TABLE `owner` DISABLE KEYS */;
-INSERT INTO `owner` VALUES ('amey','yeole');
+INSERT INTO `owner` VALUES (1,'abc','abc',NULL),(2,'a','a','a'),(3,'ab','ab','ab@gmail.com'),(7,'sagar','$2a$10$4S8Wu.LIjnHBdfXa9mtjKOK3BlL7e6fbTkBX7wW1WwLJvXsIZAqWC','sagar@gmail.com');
 /*!40000 ALTER TABLE `owner` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `parking_details`
---
-
-DROP TABLE IF EXISTS `parking_details`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `parking_details` (
-  `id` int NOT NULL,
-  `floar` int NOT NULL,
-  `vehicle_type` varchar(50) NOT NULL DEFAULT '',
-  `capacity` int NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `parking_details`
---
-
-LOCK TABLES `parking_details` WRITE;
-/*!40000 ALTER TABLE `parking_details` DISABLE KEYS */;
-INSERT INTO `parking_details` VALUES (78,89,'lp',52),(85,96,'oiu',87),(75269,785,'kjhgf',4123);
-/*!40000 ALTER TABLE `parking_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -163,13 +141,9 @@ CREATE TABLE `two_w` (
 
 LOCK TABLES `two_w` WRITE;
 /*!40000 ALTER TABLE `two_w` DISABLE KEYS */;
-INSERT INTO `two_w` VALUES (1,2,_binary ''),(2,2,_binary ''),(5,0,_binary '');
+INSERT INTO `two_w` VALUES (3,0,_binary '\0'),(5,1,_binary ''),(6,0,_binary '');
 /*!40000 ALTER TABLE `two_w` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'edac'
---
 
 --
 -- Dumping routines for database 'edac'
@@ -184,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-19 12:55:25
+-- Dump completed on 2021-03-23 17:35:26

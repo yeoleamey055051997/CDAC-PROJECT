@@ -109,33 +109,46 @@ body {
 	}
 }
 
-.footer{
-  background: #152F4F;
-  color:white;
-  
-  .links{
-    ul {list-style-type: none;}
-    li a{
-      color: white;
-      transition: color .2s;
-      &:hover{
-        text-decoration:none;
-        color:#4180CB;
-        }
-    }
-  }  
-  .about-company{
-    i{font-size: 25px;}
-    a{
-      color:white;
-      transition: color .2s;
-      &:hover{color:#4180CB}
-    }
-  } 
-  .location{
-    i{font-size: 18px;}
-  }
-  .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+.footer {
+	background: #152F4F;
+	color: white;
+	.
+	links
+	{
+	ul
+	{list-style-type
+	:
+	none;
+}
+
+li a {
+	color: white;
+	transition: color .2s; &: hover { text-decoration : none;
+	color: #4180CB;
+}
+
+}
+}
+.about-company {
+	i {font-size: 25px;
+}
+
+a {
+	color: white;
+	transition: color .2s; &:
+	hover {color: #4180CB
+}
+
+}
+}
+.location {
+	i {font-size: 18px;
+}
+
+}
+.copyright p {
+	border-top: 1px solid rgba(255, 255, 255, .1);
+}
 }
 </style>
 <body>
@@ -147,8 +160,8 @@ body {
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav me-auto mb-2 mb-md-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="login.jsp">Owner
+							aria-current="page" href="/index">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="/addslots">Owner
 								login</a></li>
 						<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 						<li class="nav-item"><a class="nav-link disabled" href="#"
@@ -200,7 +213,8 @@ body {
 							<h1>Book your spot for Four wheeler</h1>
 							<p>You can book the parking according to your need</p>
 							<p>
-								<a class="btn btn-lg btn-primary" href="Four_w_booking">Book now</a>
+								<a class="btn btn-lg btn-primary" href="Four_w_booking">Book
+									now</a>
 							</p>
 						</div>
 					</div>
@@ -216,7 +230,8 @@ body {
 							<h1>Our Specialties</h1>
 							<p>Gallery</p>
 							<p>
-								<a class="btn btn-lg btn-primary" href="#show_now">Click to view</a>
+								<a class="btn btn-lg btn-primary" href="#show_now">Click to
+									view</a>
 							</p>
 						</div>
 					</div>
@@ -242,67 +257,10 @@ body {
 
 		<div class="container marketing">
 
-			<!-- Three columns of text below the carousel -->
-			<div class="row">
-				<div class="col-lg-4">
-					<svg class="bd-placeholder-img rounded-circle" width="140"
-						height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-						aria-label="Placeholder: 140x140"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						<title>Placeholder</title><rect width="100%" height="100%"
-							fill="#777" />
-						<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-					<h2>Heading</h2>
-					<p>Some representative placeholder content for the three
-						columns of text below the carousel. This is the first column.</p>
-					<p>
-						<a class="btn btn-secondary" href="#">View details &raquo;</a>
-					</p>
-				</div>
-				<!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<svg class="bd-placeholder-img rounded-circle" width="140"
-						height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-						aria-label="Placeholder: 140x140"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						<title>Placeholder</title><rect width="100%" height="100%"
-							fill="#777" />
-						<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-					<h2>Heading</h2>
-					<p>Another exciting bit of representative placeholder content.
-						This time, we've moved on to the second column.</p>
-					<p>
-						<a class="btn btn-secondary" href="#">View details &raquo;</a>
-					</p>
-				</div>
-				<!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<svg class="bd-placeholder-img rounded-circle" width="140"
-						height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-						aria-label="Placeholder: 140x140"
-						preserveAspectRatio="xMidYMid slice" focusable="false">
-						<title>Placeholder</title><rect width="100%" height="100%"
-							fill="#777" />
-						<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-					<h2>Heading</h2>
-					<p>And lastly this, the third column of representative
-						placeholder content.</p>
-					<p>
-						<a class="btn btn-secondary" href="#">View details &raquo;</a>
-					</p>
-				</div>
-				<!-- /.col-lg-4 -->
-			</div>
-			<!-- /.row -->
-
-
 			<!-- START THE FEATURETTES -->
 
 			<hr class="featurette-divider" id="show_now">
-			
+
 			<!-- Feature 1 -->
 			<div class="row featurette">
 				<div class="col-md-7">
@@ -311,48 +269,90 @@ body {
 				</div>
 				<div class="col-md-5">
 					<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-					<image href="images/mak-DBHWvSqTp4M-unsplash.jpg" 
-					height="400" width="400"/></svg>
+					<image href="images/mak-DBHWvSqTp4M-unsplash.jpg" height="400"
+							width="400" /></svg>
 				</div>
 			</div>
 			<!-- Feature 1 complete-->
-			
+
 			<hr class="featurette-divider">
 
 			<!-- Feature 2 -->
 			<div class="row featurette">
 				<div class="col-md-7 order-md-2">
 					<h2 class="featurette-heading">Automated Parking System (APS)</h2>
-					<p class="lead">An Automated Parking System or APS is a mechanical system that moves cars 
-						from the entry to an available parking space.</p>
+					<p class="lead">An Automated Parking System or APS is a
+						mechanical system that moves cars from the entry to an available
+						parking space.</p>
 				</div>
 				<div class="col-md-5 order-md-1">
 					<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-					<image href="images/erik-mclean-FriutX_vqnc-unsplash.jpg" 
-					height="400" width="400"/></svg>
+					<image href="images/erik-mclean-FriutX_vqnc-unsplash.jpg"
+							height="400" width="400" /></svg>
 				</div>
 			</div>
 			<!-- Feature 2 complete-->
-			
+
 			<hr class="featurette-divider">
 
 			<!-- Feature 3 -->
 			<div class="row featurette">
 				<div class="col-md-7">
 					<h2 class="featurette-heading">Easy Check in Check out System</h2>
-					<p class="lead">We provide easy Check in Check out System for good customer experience</p>
+					<p class="lead">We provide easy Check in Check out System for
+						good customer experience</p>
 				</div>
 				<div class="col-md-5">
 					<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-					<image href="images/aaron-lutas-JKZkFk8WnrI-unsplash.jpg" 
-					height="400" width="400"/></svg>
+					<image href="images/aaron-lutas-JKZkFk8WnrI-unsplash.jpg"
+							height="400" width="400" /></svg>
 				</div>
 			</div>
 			<!-- Feature 3 complete-->
 
+			<hr class="featurette-divider" id="#">
+			<div class="col-md-7">
+				<h3 class="featurette-heading">Customer review</h3>
+			</div>
+			<span>.</span>
+			<!-- Three columns of text below the carousel -->
+			<div class="row">
+				<div class="col-lg-4">
+					<svg class="bd-placeholder-img rounded-circle" width="140"
+						height="140" xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="xMidYMid slice">
+						<image href="images/me.jpg" height="140" width="140" />
+					</svg>
+					<h2>Amey Yeole</h2>
+					<p>V-park is secure and easy parking.</p>
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<svg class="bd-placeholder-img rounded-circle" width="140"
+						height="140" xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="xMidYMid slice">
+						<image href="images/prateek.jpg" height="140" width="140" />
+					</svg>
+					<h2>Prateek Kamlesh</h2>
+					<p>V-park is secure and easy parking.</p>
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<svg class="bd-placeholder-img rounded-circle" width="140"
+						height="140" xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="xMidYMid slice">
+						<image href="images/me.jpg" height="140" width="140" />
+					</svg>
+					<h2>Amey Yeole</h2>
+					<p>V-park is secure and easy parking.</p>
+				</div>
+				<!-- /.col-lg-4 -->
+			</div>
+			<!-- /.row -->
+
 			<!-- /END THE FEATURETTES -->
 		</div>
-		
+
 		<!-- /.container -->
 
 		<!-- FOOTER -->
@@ -367,7 +367,7 @@ body {
 					<div class="col-lg-3 col-xs-12 links">
 						<h4 class="mt-lg-0 mt-sm-3">Contribution</h4>
 						<ul class="m-0 p-0">
-							<li>Amey Yeole</li>
+							<li>abc</li>
 						</ul>
 					</div>
 					<div class="col-lg-4 col-xs-12 location">
@@ -384,14 +384,15 @@ body {
 				<div class="row mt-5">
 					<div class="col copyright">
 						<p class="">
-							<small class="text-white-50">&copy; 2017 - 2021 V-Park, Inc. &middot;
-							<a href="#">Privacy</a> &middot; <a href="#">Terms</a></small>
+							<small class="text-white-50">&copy; 2017 - 2021 V-Park,
+								Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+							</small>
 						</p>
 					</div>
 				</div>
 				<p class="float-end">
-				<a href="#">Back to top</a>
-			</p>
+					<a href="#">Back to top</a>
+				</p>
 			</div>
 		</div>
 	</main>
