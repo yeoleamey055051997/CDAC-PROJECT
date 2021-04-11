@@ -165,7 +165,7 @@ a {
 								login</a></li>
 						<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 						<li class="nav-item"><a class="nav-link disabled" href="#"
-							tabindex="-1" aria-disabled="true">Disabled</a></li>
+							tabindex="-1" aria-disabled="true"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -321,9 +321,9 @@ a {
 					<svg class="bd-placeholder-img rounded-circle" width="140"
 						height="140" xmlns="http://www.w3.org/2000/svg"
 						preserveAspectRatio="xMidYMid slice">
-						<image href="images/me.jpg" height="140" width="140" />
+						<image href="images/Anshika Agarwal.jpg" height="140" width="140" />
 					</svg>
-					<h2>Amey Yeole</h2>
+					<h2>Anshika Agarwal</h2>
 					<p>V-park is secure and easy parking.</p>
 				</div>
 				<!-- /.col-lg-4 -->
@@ -341,9 +341,9 @@ a {
 					<svg class="bd-placeholder-img rounded-circle" width="140"
 						height="140" xmlns="http://www.w3.org/2000/svg"
 						preserveAspectRatio="xMidYMid slice">
-						<image href="images/me.jpg" height="140" width="140" />
+						<image href="images/Abhay.jpg" height="140" width="140" />
 					</svg>
-					<h2>Amey Yeole</h2>
+					<h2>Abhay Varma</h2>
 					<p>V-park is secure and easy parking.</p>
 				</div>
 				<!-- /.col-lg-4 -->
@@ -367,7 +367,7 @@ a {
 					<div class="col-lg-3 col-xs-12 links">
 						<h4 class="mt-lg-0 mt-sm-3">Contribution</h4>
 						<ul class="m-0 p-0">
-							<li>abc</li>
+							<li>V-Park Team</li>
 						</ul>
 					</div>
 					<div class="col-lg-4 col-xs-12 location">
